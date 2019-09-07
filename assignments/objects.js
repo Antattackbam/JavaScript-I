@@ -101,19 +101,19 @@ const parent = {
   name: 'Susan',
   age: 70, 
   speak: function() {
-    return 'hi my name is ' + this.name;
+    return 'Hello! My name is ' + this.name;
   },
     child: {
       name: 'George',
       age: 50,
-      speak: () => {
-        return ' My name is &{this.name}'
+      speak: function() {
+        return 'Hello! My name is ' + this.name;
       },
         grandchild:{
           name: 'Sam',
           age: 30,
-          speak: () => {
-            return ' My name is &{this.name}'
+          speak: function() {
+            return 'Hello! My name is ' + this.name;
           }
     }
 
@@ -131,10 +131,10 @@ console.log(parent.child.grandchild.name);
 console.log(parent.child.grandchild.age);
 
 // Have the parent speak
-console.log(parent.speak);
+console.log(parent.speak());
 
 // Have the child speak
-console.log(parent.child.speak);
+console.log(parent.child.speak());
 
 // Have the grandchild speak
-console.log(parent.child.grandchild.speak);
+console.log(parent.child.grandchild.speak());
